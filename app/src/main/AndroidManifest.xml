@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.unifiedcinema">
+
+    <!-- Permissions -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+
+    <!-- Features for Android TV -->
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.faketouch"
+        android:required="false" />
+
+    <application
+        android:name=".UnifiedCinemaApplication"
+        android:allowBackup="true"
+        android:banner="@drawable/tv_banner"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.UnifiedCinema"
+        tools:targetApi="31">
+
+        <!-- Main Activity for Phone/Tablet -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.UnifiedCinema"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Leanback Launcher for Android TV -->
+        <activity
+            android:name=".TVMainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.UnifiedCinema.TV"
+            android:screenOrientation="landscape"
+            android:banner="@drawable/tv_banner">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Media Session Service for background playback -->
+        <service
+            android:name=".media.MediaPlaybackService"
+            android:exported="true"
+            android:foregroundServiceType="mediaPlayback">
+            <intent-filter>
+                <action android:name="androidx.media3.session.MediaSessionService" />
+                <action android:name="android.media.browse.MediaBrowserService" />
+            </intent-filter>
+        </service>
+
+        <!-- Player Activity -->
+        <activity
+            android:name=".player.PlayerActivity"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape"
+            android:theme="@style/Theme.UnifiedCinema.Player"
+            android:configChanges="orientation|screenSize|smallestScreenSize|keyboardHidden"
+            android:resizeableActivity="false"
+            android:supportsPictureInPicture="true"
+            android:autoEnterPictureInPicture="true" />
+
+        <!-- Detail Activities -->
+        <activity
+            android:name=".ui.screens.SeriesDetailScreen"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.UnifiedCinema"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.screens.MovieDetailScreen"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.UnifiedCinema"
+            android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".ui.screens.AnimeDetailScreen"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.UnifiedCinema"
+            android:windowSoftInputMode="adjustResize" />
+
+    </application>
+
+</manifest>

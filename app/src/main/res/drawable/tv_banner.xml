@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="320dp"
+    android:height="180dp"
+    android:viewportWidth="320"
+    android:viewportHeight="180">
+    <!-- TV Banner Placeholder - Replace with actual banner image -->
+    <rect
+        android:width="320"
+        android:height="180"
+        android:fillColor="#FF3700B3" />
+    <text
+        android:x="160"
+        android:y="100"
+        android:text="UnifiedCinema"
+        android:textSize="32sp"
+        android:textColor="#FFFFFFFF"
+        android:gravity="center"
+        android:fontFamily="sans-serif-medium" />
+</vector>

@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">UnifiedCinema</string>
+    
+    <!-- Player Controller Strings -->
+    <string name="play_pause">เล่น/หยุด</string>
+    <string name="rewind_10_seconds">ย้อนหลัง 10 วินาที</string>
+    <string name="forward_10_seconds">ข้ามหน้า 10 วินาที</string>
+    <string name="previous_episode">ตอนก่อนหน้า</string>
+    <string name="next_episode">ตอนถัดไป</string>
+    <string name="subtitles">ซับไตเติล</string>
+    <string name="audio_track">เสียง/ภาษา</string>
+    <string name="cast">แคสต์</string>
+    <string name="fullscreen">เต็มจอ</string>
+    <string name="picture_in_picture">Picture in Picture</string>
+    
+    <!-- Player Error -->
+    <string name="playback_error">ไม่สามารถเล่นวิดีโอได้</string>
+    <string name="retry">ลองใหม่</string>
+    <string name="loading">กำลังโหลด…</string>
+    
+    <!-- UI -->
+    <string name="series">ซีรีส์</string>
+    <string name="movies">หนัง</string>
+    <string name="anime">อนิเมะ</string>
+    <string name="search">ค้นหา</string>
+    <string name="settings">การตั้งค่า</string>
+    <string name="continue_watching">ดูต่อ</string>
+    <string name="episodes">ตอน</string>
+    <string name="seasons">ฤดูกาล</string>
+</resources>
